@@ -25,7 +25,7 @@ type FullStatistics struct {
 	Daily map[string]*DailyStatistics
 }
 
-const eosStatsURL = "https://eos.io/eos-sales-statistic.php"
+const eosStatsURL = "https://api.eos.io/eos-sales-statistic"
 
 // GetStatistics makes the actual http request, parses the JSON and returns
 // the data in a struct

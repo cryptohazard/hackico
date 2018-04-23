@@ -1,14 +1,12 @@
 package main
 
 import (
-	//"encoding/json"
 	"fmt"
 	"strconv"
-	//"io/ioutil"
-
 	"time"
 
 	"github.com/cryptohazard/hackico"
+	//"hackico"
 )
 
 func main() {

@@ -17,8 +17,8 @@ func Period(t time.Time) (period int, endPeriod time.Time) {
 	delta := now.Sub(t).Hours()
 	period = int(math.Ceil(delta / 23))
 	endPeriod = t.Add(time.Duration(period*23) * time.Hour)
-	fmt.Println(period)
-	fmt.Println(endPeriod)
+	//fmt.Println(period)
+	//fmt.Println(endPeriod)
 
 	return
 
