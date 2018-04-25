@@ -57,10 +57,8 @@ func TrackPrice(ch chan float64) {
 	//fmt.Println(ether)
 
 	price := eos.PriceEUR / ether.PriceEUR
-	fmt.Println("eos/eth ", price)
 	ch <- price
-	//add date and timestamp
-	fmt.Println("eos/eth ", price)
+	fmt.Println("Current price: 1 eos = ", price, "eth ")
 
 	// Infinite loop so we keep getting prices
 	for _ = range clock.C {
@@ -78,9 +76,9 @@ func TrackPrice(ch chan float64) {
 		ether = ticker.Coins["ethereum"]
 
 		price = eos.PriceEUR / ether.PriceEUR
-		fmt.Println("eos/eth ", price)
+		fmt.Println("Current price: 1 eos = ", price, "eth ")
 		ch <- price
-		coinmarketcap.PrintData(ticker)
+		//coinmarketcap.PrintData(ticker)
 
 	}
 
@@ -110,7 +108,7 @@ func Buy(ch chan float64, period int, endPeriod time.Time) {
 // actual buying function after we enter moneyTime
 func buy(ch chan float64, period int, endPeriod time.Time) {
 	// threshold decide when we get in.
-	// 20 % is conservative, 50% is greedy ;-)
+	// 15 % is conservative, 40% is greedy ;-)
 	threshold := 25.37
 	marketPrice := <-ch
 	stats := GetDailyStatistics(strconv.Itoa(period))

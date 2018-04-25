@@ -19,8 +19,8 @@ func main() {
 	period, endPeriod := hackico.Period(startICO)
 	fmt.Println("we are on period ", period)
 	fmt.Println("This period finishes at ", endPeriod.Local())
-	stats := hackico.GetDailyStatistics(strconv.Itoa(period))
-	fmt.Println(*stats)
+	fmt.Println("Countdown: ", endPeriod.Sub(time.Now()).Round(time.Minute), "left")
+	hackico.GetDailyStatistics(strconv.Itoa(period))
 	ch := make(chan float64, 20)
 	go hackico.Buy(ch, period, endPeriod)
 
@@ -28,13 +28,15 @@ func main() {
 	for {
 
 		if time.Now().Before(endPeriod) {
-			time.Sleep(77 * time.Minute)
-			fmt.Println("hello we are on period ", period)
+			time.Sleep(7 * time.Minute)
+			fmt.Println("Hello we are on period ", period)
 			fmt.Println("This period finishes at ", endPeriod.Local())
+			fmt.Println("Countdown: ", endPeriod.Sub(time.Now()).Round(time.Minute), "left")
 		} else {
 			period, endPeriod = hackico.Period(startICO)
 			fmt.Println("we are on period ", period)
 			fmt.Println("This period finishes at ", endPeriod.Local())
+			fmt.Println("Countdown: ", endPeriod.Sub(time.Now()).Round(time.Minute), "left")
 			go hackico.Buy(ch, period, endPeriod)
 		}
 
