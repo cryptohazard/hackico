@@ -8,7 +8,7 @@ We use two strategies:
 
 No need to restart the program everyday. Just make sure the transaction to buy is ready/unused(see below for more details.)
 # Installation
-You need to have a working go environment and clone this repository. I can provide executable if there are requests.
+You need to have a working go(lang) environment in version >=1.9 and clone this repository. I can provide executable if there are requests.
 
 You first need to get the only dependency:
 ```
