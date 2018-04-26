@@ -12,7 +12,7 @@ You need to have a working go environment and clone this repository. I can provi
 
 You first need to get the only dependency:
 ```
-$ go get github.com/cryptohazard/hackico
+$ go get github.com/cryptohazard/coinmarketcap
 ```
 
 Now you can go in the ```exec``` folder and build the executable( I added the ```-o``` option to change the name):
