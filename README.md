@@ -1,4 +1,5 @@
 # Hackico
+![logo](https://user-images.githubusercontent.com/34451833/39637092-b471864a-4fca-11e8-9460-95354d53096e.png)
 This (*Not so quick and not so dirty*) project help you profit from market discrepancy in ICOs like EOS. EOS has a new batch of tokens sold everyday, for 350 period of 23 Hours. The token can already be traded, while the daily ICO is ongoing.
 
 This create an opportunity to profit: the daily ICO price won't always be aligned with the market price due to various reason (FOMO, finishing ICO time compared to investors timezone, loss of popularity, spam attacks...).
