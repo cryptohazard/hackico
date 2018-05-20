@@ -83,6 +83,7 @@ You can check up to the last 80 days, using ```./hackico -h X``` with *X* being 
 -h uint
     	How many days of history do you want to print? Max: 80!
 ```
+![img](./hackico_history.png)
 
 Lines in RED means that the percentage of the expected gain was negative. BLUE means it was positive.
 
