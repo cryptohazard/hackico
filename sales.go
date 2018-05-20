@@ -62,12 +62,28 @@ func GetStatistics() (FullStatistics, error) {
 }
 
 //GetDailyStatistics ...
-func GetDailyStatistics(day string) (dailyStat *DailyStatistics) {
+func GetDailyStatistics(day string) *DailyStatistics {
 	full, err := GetStatistics()
 	if err != nil {
 		log.Fatal(err)
 		return &DailyStatistics{}
 	}
 	return full.Daily[day]
+
+}
+
+//GetLastDailyStatistics ...
+func GetLastDailyStatistics(numberOfDays uint, period int) (lastDailyStat []*DailyStatistics) {
+	full, err := GetStatistics()
+	if err != nil {
+		log.Fatal(err)
+	}
+	k := numberOfDays
+	for j := period - 1; k > 0; k-- {
+		lastDailyStat = append(lastDailyStat, full.Daily[strconv.Itoa(j)])
+		j--
+	}
+
+	return
 
 }
