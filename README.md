@@ -1,5 +1,6 @@
 # Hackico
-This (*Not so quick and not so dirty*) project help you profit from market discrepancy in ICOs like EOS. EOS has a new batch of tokens sold everyday, for 350 periods of 23 Hours. The token can already be traded, while the daily ICO is ongoing.
+![logo](https://user-images.githubusercontent.com/34451833/39637092-b471864a-4fca-11e8-9460-95354d53096e.png)
+This (*Not so quick and not so dirty*) project help you profit from market discrepancy in ICOs like EOS. EOS has a new batch of tokens sold everyday, for 350 period of 23 Hours. The token can already be traded, while the daily ICO is ongoing.
 
 This create an opportunity to profit: the daily ICO price won't always be aligned with the market price due to various reason (FOMO, finishing ICO time compared to investors timezone, loss of popularity, spam attacks...).
 We use two strategies:
@@ -8,7 +9,7 @@ We use two strategies:
 
 No need to restart the program everyday. Just make sure the transaction to buy is ready/unused(see below for more details.)
 # Installation
-You need to have a working go environment and clone this repository. I can provide executable if there are requests.
+You need to have a working go(lang) environment in version >=1.9 and clone this repository. I can provide executable if there are requests.
 
 You first need to get the dependencies:
 ```
