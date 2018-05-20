@@ -11,9 +11,11 @@ No need to restart the program everyday. Just make sure the transaction to buy i
 # Installation
 You need to have a working go(lang) environment in version >=1.9 and clone this repository. I can provide executable if there are requests.
 
-You first need to get the only dependency:
+You first need to get the dependencies:
 ```
-$ go get github.com/cryptohazard/coinmarketcap
+$ go get github.com/cryptohazard/hackico
+$ go get github.com/fatih/color
+
 ```
 
 Now you can go in the ```exec``` folder and build the executable( I added the ```-o``` option to change the name):
@@ -25,9 +27,10 @@ $ ./hackico
 # Configuration
 
 ## Threshold percentage
-Choose the thresold at which you want to get by changing it in ```hackico.go```:
+Choose the thresold at which you want to get in with the option ```./hackico -t```:
 ```
-threshold := 25.37
+-t float
+    	threshold to decide when we get in. 5 % is conservative, 20% is greedy ;-) (default 9.37)
 ```
 
 ## Time to get in
@@ -71,6 +74,18 @@ If the expected returns are lower than he threshold percentage you put, the tran
 ```
 Get rich ... another day
 ```
+
+# History of daily ICOs
+You can check how the previous daily ICOs went(*would you have earn or lost money joining in*). This function uses the [cryptocompare historical hourly API](https://www.cryptocompare.com/api/#-api-data-histohour-) for the price data.
+You can check up to the last 80 days, using ```./hackico -h X``` with *X* being the number of days you want to inspect.
+
+```
+-h uint
+    	How many days of history do you want to print? Max: 80!
+```
+
+Lines in RED means that the percentage of the expected gain was negative. BLUE means it was positive.
+
 
 
 # Responsibility/Disclaimer
