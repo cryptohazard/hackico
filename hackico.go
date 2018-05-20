@@ -86,7 +86,7 @@ func TrackPrice(ch chan float64) {
 }
 
 //Buy : let's buy some tokens
-func Buy(ch chan float64, period int, endPeriod time.Time) {
+func Buy(ch chan float64, period int, endPeriod time.Time, threshold float64) {
 
 	//production
 	//moneyTime = (blocks average(15) * 5) rounded for margin = 87 sec = 1m27s
@@ -100,16 +100,13 @@ func Buy(ch chan float64, period int, endPeriod time.Time) {
 	//delta := endPeriod.Sub(time.Now()).Seconds()
 	//d := int(math.Floor(delta)) - moneyTime + 2 - 25200 // - 7 heures
 	time.AfterFunc(time.Duration(d)*time.Second, func() {
-		buy(ch, period, endPeriod)
+		buy(ch, period, endPeriod, threshold)
 	})
 	go TrackPrice(ch)
 }
 
 // actual buying function after we enter moneyTime
-func buy(ch chan float64, period int, endPeriod time.Time) {
-	// threshold decide when we get in.
-	// 15 % is conservative, 40% is greedy ;-)
-	threshold := 25.37
+func buy(ch chan float64, period int, endPeriod time.Time, threshold float64) {
 	marketPrice := <-ch
 	stats := GetDailyStatistics(strconv.Itoa(period))
 	saleCurrentPrice := stats.Price
